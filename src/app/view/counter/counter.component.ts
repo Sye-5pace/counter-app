@@ -1,26 +1,27 @@
 import { Component } from '@angular/core';
-import { select, Store } from '@ngrx/store'
+import { select, Store } from '@ngrx/store';
 import { CommonModule } from '@angular/common';
 import anime from 'animejs/lib/anime.es.js';
 import { ICounterState } from '../../store/counter.model';
 import { ButtonComponent } from '../../components/reusable/button/button.component';
-import { increment , decrement, reset } from '../../store/counter.actions'
+import { increment, decrement, reset, setInitialValue } from '../../store/counter.actions';
 import { selectCount } from '../../store/counter.selectors';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [ CommonModule, ButtonComponent],
+  imports: [CommonModule, ButtonComponent, FormsModule],
   templateUrl: './counter.component.html',
-  styleUrl: './counter.component.css'
+  styleUrls: ['./counter.component.css']
 })
-
 export class CounterComponent {
   count!: number;
+  initialValue: number = 0; 
 
-  constructor(private store: Store<{count: ICounterState}>){}
+  constructor(private store: Store<{ count: ICounterState }>) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.store.pipe(select(selectCount)).subscribe(
       (count) => this.count = count
     );
@@ -31,7 +32,6 @@ export class CounterComponent {
   }
 
   decrement(): void {
-    console.log(this.count);
     this.store.dispatch(decrement());
   }
 
@@ -39,7 +39,13 @@ export class CounterComponent {
     this.store.dispatch(reset());
   }
 
-  ngAfterViewInit() :void {
+  setInitialValue(): void {
+    if (!isNaN(this.initialValue)) {
+      this.store.dispatch(setInitialValue({ count: this.initialValue }));
+    }
+  }
+
+  ngAfterViewInit(): void {
     anime({
       targets: 'main',
       translateY: [300, 0],
@@ -52,5 +58,4 @@ export class CounterComponent {
       scale: [0.8, 1]
     });
   }
-
 }

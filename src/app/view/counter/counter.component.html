@@ -1,4 +1,4 @@
-<main class="bg-[#fff]   bg-opacity-35 backdrop-blur-sm hover:drop-shadow-lg h-[15.5rem] w-[40%] rounded-[.625rem] flex justify-center items-center flex-col p-2 gap-y-6">
+<main class="bg-[#fff]   bg-opacity-35 backdrop-blur-sm hover:drop-shadow-lg h-[21rem] w-[35%] rounded-[.625rem] flex justify-center items-center flex-col p-2 gap-y-3">
   <h2 class="text-[#fff] font-bold text-[2.125rem]">COUNTER</h2>
   <section class="flex gap-7 px-6 w-[7rem] items-center justify-center border border-mercury">
     <button title="reset" class="hover:animate-spin" (click)="reset()">
@@ -11,6 +11,17 @@
         {{ count }}
       </p>
     </div>
+  </section>
+  <section class="flex items-center gap-4">
+    <label for="initialValue" class="text-[#fff]">Initial value:</label>
+    <input
+      class="focus:outline-none p-2 rounded"
+      id="initialValue"
+      type="number"
+      [(ngModel)]="initialValue"
+      (blur)="setInitialValue()"
+      (keydown.enter)="setInitialValue()"
+    />
   </section>
   <section class="flex gap-10 *:rounded-[.625rem] *:font-medium *:p-2">
     <app-button [buttonTitle]="'increase'" [buttonName]="'+ INCREASE'"
