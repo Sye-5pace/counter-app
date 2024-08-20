@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CounterComponent } from './view/counter/counter.component';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,8 @@ import { CounterComponent } from './view/counter/counter.component';
 
 export class AppComponent {
   title = 'counter-app';
+  constructor(private store: Store) {}
+  ngOnInit() {
+    this.store.dispatch({ type: '[App] Initialize' });
+  }
 }
