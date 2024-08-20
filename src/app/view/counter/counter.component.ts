@@ -12,7 +12,7 @@ import anime from 'animejs/lib/anime.es.js';
 })
 
 export class CounterComponent {
-
+  count: number = 0;
   ngAfterViewInit() :void {
     anime({
       targets: 'main',
@@ -25,7 +25,6 @@ export class CounterComponent {
       delay: 300,
       scale: [0.8, 1]
     });
-
   }
 
 }
