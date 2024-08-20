@@ -8,7 +8,7 @@ export const initialState = {
 const _counterReducer = createReducer(
   initialState,
   on(increment, (state) => ({ ...state, count: state.count + 1 })),
-  on(decrement, (state) => ({ ...state, count: state.count - 1 })),
+  on(decrement, (state) => (state.count > 0 ? { ...state, count: state.count - 1 } : state)),
   on(reset, (state) => ({ ...state, count: 0 }))
 );
 
