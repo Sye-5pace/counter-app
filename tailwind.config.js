@@ -12,7 +12,8 @@ module.exports = {
       'cello':'#1F3E59',
       'wellread': '#BA3630',
       'mercury': '#E1E1E1',
-      'foggygray':'#D1D2BE'
+      'foggygray':'#D1D2BE',
+      'william':'#426C63',
     },
     extend: {
       boxShadow: {
