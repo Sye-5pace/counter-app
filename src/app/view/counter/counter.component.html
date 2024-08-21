@@ -1,13 +1,15 @@
 <div class="w-[26rem]">
-  <h2 class="text-[#fff] font-bold text-[2.125rem] font-bungee text-center">COUNTER</h2>
-  <main class="bg-[#fff]  bg-opacity-35 backdrop-blur-sm hover:drop-shadow-lg h-[15rem] w-full rounded-[.625rem] flex justify-center items-center flex-col p-2 gap-y-6">
-    <section class="flex gap-7 px-6 w-[7rem] items-center justify-center border border-mercury">
-      <button title="reset" class="hover:animate-spin" (click)="reset()">
+  <h2 class="text-[#fff] font-bold text-[2.125rem] font-bungee text-center">
+    COUNTER
+  </h2>
+  <main class="bg-[#fff] bg-opacity-30 backdrop-blur-sm border border-[#fff] border-opacity-20 shadow-lg rounded-[.625rem] flex justify-center items-center flex-col p-4 gap-y-6">
+    <section class="flex gap-7 px-6 w-[7rem] items-center justify-center border border-mercury bg-[#fff] bg-opacity-20 backdrop-blur-sm rounded-md">
+      <button title="reset" class="hover:animate-spin">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 stroke-[#fff]">
           <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
         </svg>
       </button>
-      <div  title="count"  class=" text-center">
+      <div title="count" class="text-center">
         <p class="font-medium text-[2.25rem] text-center text-[#fff]">
           {{ count }}
         </p>
@@ -16,7 +18,7 @@
     <section class="flex items-center justify-center gap-4">
       <label for="initialValue" class="text-[#fff]">Enter count:</label>
       <input
-        class="focus:outline-none p-2 rounded"
+        class="focus:outline-none p-2 rounded-md w-10 bg-[#fff] bg-opacity-20 backdrop-blur-sm"
         id="initialValue"
         type="number"
         [(ngModel)]="initialValue"
@@ -24,12 +26,11 @@
         (keydown.enter)="setInitialValue()"
       />
     </section>
-    <section class="flex gap-10 *:rounded-[.625rem] *:font-medium *:p-2">
-      <app-button [buttonTitle]="'increase'" [buttonName]="'+ INCREASE'"
-      [buttonEvent]="increment.bind(this)" [customClass]="'bg-wellread '"/>
-      <app-button [buttonTitle]="'decrease'" [buttonName]="'- DECREASE'"
-      [buttonEvent]="decrement.bind(this)" [customClass]="'bg-william '"/>
+    <section class="flex gap-10">
+      <app-button [buttonTitle]="'increase'" [buttonName]="' + INCREASE '"
+      [buttonEvent]="increment.bind(this)" [customClass]="'bg-wellread'"/>
+      <app-button [buttonTitle]="'decrease'" [buttonName]="' - DECREASE '"
+      [buttonEvent]="decrement.bind(this)" [customClass]="'bg-william'"/>
     </section>
-
   </main>
 </div>
