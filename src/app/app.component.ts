@@ -11,8 +11,9 @@ import { Store } from '@ngrx/store';
 })
 
 export class AppComponent {
-  title = 'counter-app';
+
   constructor(private store: Store) {}
+  
   ngOnInit() {
     this.store.dispatch({ type: '[App] Initialize' });
   }
