@@ -52,7 +52,7 @@ export class CounterComponent {
       translateY: [300, 0],
       easing: 'easeInOutQuad',
       borderRadius: ['50%', '.625rem'],
-      height: ['0px', '20rem'],
+      height: ['0px', '15rem'],
       opacity: [0, 1],
       delay: 300,
       scale: [0.8, 1]
