@@ -58,12 +58,21 @@ export class CounterComponent {
       scale: [0.8, 1]
     });
     anime({
-      targets:'h2',
+      targets:'h2,#counter-head',
       translateY: [-300, 0],
       easing: 'easeInOutQuad',
       opacity: [0, 1],
       scale: [0.8, 1],
       delay: 150
+    })
+    anime({
+      targets:'#dots div',
+      translateY: [-200, 0],
+      opacity: [0, 1],
+      easing: 'easeOutBounce',
+      delay: anime.stagger(500),
+      duration: 1500,
+      offset: '+=50'
     })
   }
 }
