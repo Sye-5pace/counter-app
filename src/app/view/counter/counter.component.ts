@@ -70,9 +70,8 @@ export class CounterComponent {
       translateY: [-200, 0],
       opacity: [0, 1],
       easing: 'easeOutBounce',
-      delay: anime.stagger(500),
-      duration: 1500,
-      offset: '+=50'
+      delay: anime.stagger(700),
+      duration: 1700,
     })
   }
 }
