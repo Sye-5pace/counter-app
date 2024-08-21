@@ -1,18 +1,18 @@
 import { TestBed } from '@angular/core/testing';
-import { provideMockActions } from '@ngrx/effects/testing';
-import { Observable } from 'rxjs';
-
+import { provideMockStore } from '@ngrx/store/testing';
 import { CounterEffects } from './counter.effects';
+import { Actions } from '@ngrx/effects';
+import { of } from 'rxjs';
 
 describe('CounterEffects', () => {
-  let actions$: Observable<any>;
   let effects: CounterEffects;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
         CounterEffects,
-        provideMockActions(() => actions$)
+        provideMockStore({}),  // Mock Store provider
+        { provide: Actions, useValue: of() },  // Provide Actions stream
       ]
     });
 
