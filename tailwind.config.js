@@ -5,7 +5,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      // 'ubuntu': ['Ubuntu','sans-serif'],
+      'bungee': ['Bungee','sans-serif'],
+      'yanone': ['Yanone','sans-serif']
     },
     colors: {
       'pavlova': '#D4BE9C',

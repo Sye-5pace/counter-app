@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CounterComponent {
   count!: number;
-  initialValue: number = 0; 
+  initialValue: number = 0;
 
   constructor(private store: Store<{ count: ICounterState }>) {}
 
@@ -51,11 +51,18 @@ export class CounterComponent {
       translateY: [300, 0],
       easing: 'easeInOutQuad',
       borderRadius: ['50%', '.625rem'],
-      width: ['0px', '35rem'],
-      height: ['0px', '15.5rem'],
+      height: ['0px', '15rem'],
       opacity: [0, 1],
       delay: 300,
       scale: [0.8, 1]
     });
+    anime({
+      targets:'h2',
+      translateY: [-300, 0],
+      easing: 'easeInOutQuad',
+      opacity: [0, 1],
+      scale: [0.8, 1],
+      delay: 150
+    })
   }
 }
