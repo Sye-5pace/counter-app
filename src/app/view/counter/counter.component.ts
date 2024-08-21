@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css']
 })
+
 export class CounterComponent {
   count!: number;
   initialValue: number = 0;
@@ -51,7 +52,7 @@ export class CounterComponent {
       translateY: [300, 0],
       easing: 'easeInOutQuad',
       borderRadius: ['50%', '.625rem'],
-      height: ['0px', '15rem'],
+      height: ['0px', '20rem'],
       opacity: [0, 1],
       delay: 300,
       scale: [0.8, 1]
